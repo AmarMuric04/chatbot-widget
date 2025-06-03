@@ -94,6 +94,10 @@ function initChat() {
     const messageBox = document.createElement("div");
     messageBox.innerHTML = marked.parse(text);
 
+    Array.from(messageBox.children).forEach((child) => {
+      child.style.margin = "8px 0";
+    });
+
     messageBox.style.maxWidth = "80%";
     messageBox.style.padding = "0px 16px";
     messageBox.style.borderRadius = "18px";
