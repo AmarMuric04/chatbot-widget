@@ -200,7 +200,7 @@ function initChat() {
 
   async function sendPromptAPI(prompt) {
     try {
-      const response = await fetch("http://localhost:3000/ask-gemini", {
+      const response = await fetch("http://localhost:5000/ask-gemini", {
         method: "POST",
         body: JSON.stringify({
           prompt,
