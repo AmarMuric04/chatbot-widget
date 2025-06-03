@@ -200,17 +200,20 @@ function initChat() {
 
   async function sendPromptAPI(prompt) {
     try {
-      const response = await fetch("http://localhost:5000/ask-gemini", {
-        method: "POST",
-        body: JSON.stringify({
-          prompt,
-          history: chatHistory,
-          botId,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "https://backend-cxv1.onrender.com/ask-gemini",
+        {
+          method: "POST",
+          body: JSON.stringify({
+            prompt,
+            history: chatHistory,
+            botId,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       const data = await response.json();
 
